@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina Web &#8212; documentación de bccr - 2021.05</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="GUI" href="gui.html" />
+    <link rel="prev" title="Servicio Web" href="gee.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="pagina-web">
+<h1>Pagina Web<a class="headerlink" href="#pagina-web" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>La clase <cite>PaginaWeb</cite> se define en el módulo <cite>pagina</cite> que documenta en esta página.</p>
+<p>La forma típica de utilizar esta clase es</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">bccr</span> <span class="kn">import</span> <span class="n">PW</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PW</span><span class="o">.</span><span class="n">buscar</span><span class="p">(</span><span class="s2">&quot;nombre de algún indicador&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datos</span> <span class="o">=</span> <span class="n">PW</span><span class="p">(</span><span class="n">indic1</span> <span class="o">=</span> <span class="n">codigo1</span><span class="p">,</span> <span class="n">indic2</span><span class="o">=</span><span class="n">codigo2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>donde <cite>codigo1</cite> y <cite>codigo2</cite> son los códigos de los indicadorees (posiblemente encontrados con <cite>PW.buscar</cite>), y <cite>indic1</cite> e <cite>indic2</cite> los nombres que se le quiere asignar a estos indicadores.</p>
+<p>En la documentación que sigue a continuación aparecen más ejemplos.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<span class="target" id="module-bccr.pagina"></span><dl class="py class">
+<dt id="bccr.pagina.PaginaWeb">
+<em class="property">class </em><code class="sig-prename descclassname">bccr.pagina.</code><code class="sig-name descname">PaginaWeb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cuadros</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><dl class="py method">
+<dt id="bccr.pagina.PaginaWeb.api">
+<code class="sig-name descname">api</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Cuadro</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">FechaInicio</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">FechaFinal</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">excel</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">abrir</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.api" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Construye un URL para obtener datos del sitio de indicadores económicos del BCCR</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Cuadro</strong> (<em>int</em>) – Número que identifica el cuadro que desea descargarse del sitio web del BCCR</p></li>
+<li><p><strong>FechaInicio</strong> (<em>str</em><em> or </em><em>int</em><em>, </em><em>optional</em>) – fecha de la primera observación a descargar. Ver nota 1 de la función <cite>datos</cite> para detalles de formato.</p></li>
+<li><p><strong>FechaFinal</strong> (<em>str</em><em> or </em><em>int</em><em>, </em><em>optional</em>) – fecha de la última observación a descargar. Ver nota 1 de la función <cite>datos</cite> para detalles de formato.</p></li>
+<li><p><strong>excel</strong> (<em>bool</em><em> (</em><em>opcional</em><em>, </em><em>predeterminado = True</em><em>)</em>) – Si <cite>True</cite>, obtiene la versión Excel de los datos, <cite>False</cite> obtiene la versión HTML</p></li>
+<li><p><strong>abrir</strong> (<em>bool</em><em> (</em><em>opcional</em><em>, </em><em>predeterminado = True</em><em>)</em>) – Si <cite>True</cite>, abre la página web indicada por el URL en el navegador de internet predeterminado</p></li>
+</ul>
+</dd>
+<dt class="field-even">Devuelve</dt>
+<dd class="field-even"><p><strong>El URL para descargar los datos del cuadro indicado</strong></p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Ejemplos</p>
+<ol class="arabic simple">
+<li><p>Obtener el URL  del IPC (Cuadro 9)</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">bccr</span> <span class="kn">import</span> <span class="n">PW</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PW</span><span class="o">.</span><span class="n">api</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>“<a class="reference external" href="https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?CodCuadro=9&amp;Exportar=True&amp;Excel=True">https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?CodCuadro=9&amp;Exportar=True&amp;Excel=True</a>”</p>
+<ol class="arabic simple" start="2">
+<li><p>URL para datos del M1 desde enero de 2010</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PW</span><span class="o">.</span><span class="n">api</span><span class="p">(</span><span class="mi">125</span><span class="p">,</span> <span class="n">FechaInicio</span><span class="o">=</span><span class="mi">2010</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>“<a class="reference external" href="https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?CodCuadro=125&amp;FecInicial=2010/01/01&amp;Exportar=True&amp;Excel=True">https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?CodCuadro=125&amp;FecInicial=2010/01/01&amp;Exportar=True&amp;Excel=True</a>”</p>
+<ol class="arabic simple" start="3">
+<li><p>URL para datos del IPC no transable (Cuadro 289) entre 2010 y 2015</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PW</span><span class="o">.</span><span class="n">api</span><span class="p">(</span><span class="mi">289</span><span class="p">,</span> <span class="n">FechaInicio</span><span class="o">=</span><span class="mi">2010</span><span class="p">,</span> <span class="n">FechaFinal</span><span class="o">=</span><span class="mi">2015</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>“<a class="reference external" href="https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?CodCuadro=289&amp;FecInicial=2010/01/01&amp;FecFinal=2015/12/31&amp;Exportar=True&amp;Excel=True">https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?CodCuadro=289&amp;FecInicial=2010/01/01&amp;FecFinal=2015/12/31&amp;Exportar=True&amp;Excel=True</a>”</p>
+<ol class="arabic simple" start="4">
+<li><p>URL para el M1 entre 2010 y 2015, pero en formato HTML (en vez del formato Excel predeterminado)</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PW</span><span class="o">.</span><span class="n">api</span><span class="p">(</span><span class="mi">125</span><span class="p">,</span> <span class="n">FechaInicio</span><span class="o">=</span><span class="mi">2010</span><span class="p">,</span> <span class="n">FechaFinal</span><span class="o">=</span><span class="mi">2015</span><span class="p">,</span> <span class="n">excel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>“<a class="reference external" href="https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?CodCuadro=125&amp;FecInicial=2010/01/01&amp;FecFinal=2015/12/31">https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?CodCuadro=125&amp;FecInicial=2010/01/01&amp;FecFinal=2015/12/31</a>”</p>
+<ol class="arabic simple" start="5">
+<li><p>Igual que el anterior, pero usando fechas predeterminadas. La opción <cite>abrir=True</cite> muestra los datos en su navegador de internet predeterminado</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PW</span><span class="o">.</span><span class="n">api</span><span class="p">(</span><span class="mi">125</span><span class="p">,</span> <span class="n">excel</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">abrir</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># opens link in browser</span>
+</pre></div>
+</div>
+<p>“<a class="reference external" href="https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?CodCuadro=125">https://gee.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?CodCuadro=125</a>”</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="bccr.pagina.PaginaWeb.buscar">
+<code class="sig-name descname">buscar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">todos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">frase</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">algunos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">frecuencia</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.buscar" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>buscar códigos de indicadores según su descripción</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frase</strong> (<em>str</em>) – texto que debe aparecer en la descripción del indicador. Sólo una de estos tres parámetros debe utilizarse
+a la vez. “frase” busca una coincidencia exacta, “todos” que todas las palabras aparezcan (en cualquier
+orden), “algunos” que al menos una de las palabras aparezca. La búsqueda no es sensible a mayúscula/minúscula.
+Si no se indica un parámetro [por ejemplo, PW.buscar(“precios consumidor”)], se asume que
+PW.buscar(todos=”precio consumidor”)</p></li>
+<li><p><strong>todos</strong> (<em>str</em>) – texto que debe aparecer en la descripción del indicador. Sólo una de estos tres parámetros debe utilizarse
+a la vez. “frase” busca una coincidencia exacta, “todos” que todas las palabras aparezcan (en cualquier
+orden), “algunos” que al menos una de las palabras aparezca. La búsqueda no es sensible a mayúscula/minúscula.
+Si no se indica un parámetro [por ejemplo, PW.buscar(“precios consumidor”)], se asume que
+PW.buscar(todos=”precio consumidor”)</p></li>
+<li><p><strong>algunos</strong> (<em>str</em>) – texto que debe aparecer en la descripción del indicador. Sólo una de estos tres parámetros debe utilizarse
+a la vez. “frase” busca una coincidencia exacta, “todos” que todas las palabras aparezcan (en cualquier
+orden), “algunos” que al menos una de las palabras aparezca. La búsqueda no es sensible a mayúscula/minúscula.
+Si no se indica un parámetro [por ejemplo, PW.buscar(“precios consumidor”)], se asume que
+PW.buscar(todos=”precio consumidor”)</p></li>
+<li><p><strong>frecuencia</strong> (<em>str</em><em>, </em><em>optional. uno de</em><em> (</em><em>'Q'</em><em>, </em><em>'A'</em><em>, </em><em>'M'</em><em>, </em><em>'D'</em><em>)</em>) – mostrar solo indicadores que tengan la frecuencia indicada.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Devuelve</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto</dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Ejemplos</p>
+<p>Para buscar un indicador que tenga todas las palabras «Índice», «precios», «consumidor» (en cualquier orden)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">bccr</span> <span class="kn">import</span> <span class="n">PW</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PW</span><span class="o">.</span><span class="n">buscar</span><span class="p">(</span><span class="n">todos</span><span class="o">=</span><span class="s2">&quot;Índice precios consumidor&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Para buscar un indicador que tenga la frase exacta «Índice de Precios al Consumidor»</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PW</span><span class="o">.</span><span class="n">buscar</span><span class="p">(</span><span class="n">frase</span><span class="o">=</span><span class="s2">&quot;Índice de Precios al Consumidor&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Para buscar un indicador que tenga al menos una de las palabras «exportaciones» e «importaciones»</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PW</span><span class="o">.</span><span class="n">buscar</span><span class="p">(</span><span class="n">algunos</span><span class="o">=</span><span class="s2">&quot;exportaciones importaciones&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Para buscar los términos «precios transables», y filtrar que muestre solo resultados con medida «Variación interanual»</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PW</span><span class="o">.</span><span class="n">buscar</span><span class="p">(</span><span class="s1">&#39;precios transables&#39;</span><span class="p">,</span> <span class="n">Medida</span><span class="o">=</span><span class="s1">&#39;Variación interanual&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Para mostrar un breve mensaje de ayuda</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PW</span><span class="o">.</span><span class="n">buscar</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="bccr.pagina.PaginaWeb.datos">
+<code class="sig-name descname">datos</code><span class="sig-paren">(</span><em class="sig-param">*Cuadros</em>, <em class="sig-param">FechaInicio=None</em>, <em class="sig-param">FechaFinal=None</em>, <em class="sig-param">func=&lt;function sum&gt;</em>, <em class="sig-param">freq=None</em>, <em class="sig-param">info=False</em>, <em class="sig-param">**indicadores</em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.datos" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Descargar datos del sitio de Indicadores Económicos del BCCR</p>
+<p>Construye una consulta por método GET a partir de los parámetros proporcionados, para cada uno de los
+Indicadores solicitados. Descarga los datos, los transforma en una tabla de datos de Pandas.
+Si hay indicadores de distintas frecuecias, los transforma a la misma frecuencia según el método indicado.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Cuadros</strong> (<em>sucesión de enteros o strings</em>) – Los códigos numéricos (como int o str) de los cuadros que se desean descargar (ver parámetro
+<cite>indicadores</cite>). En el resultado, el indicador se identifica con el nombre que tiene en el catálogo de
+cuentas; en caso de querer indicar un nombre distinto, solicitar el cuadro usando el parámetro
+<cite>indicadores</cite></p></li>
+<li><p><strong>FechaInicio</strong> (<em>str</em><em> or </em><em>int</em><em>, </em><em>optional</em>) – fecha de la primera observación a descargar. Ver nota 6 abajo para más detalles.</p></li>
+<li><p><strong>FechaFinal</strong> (<em>str</em><em> or </em><em>int</em><em>, </em><em>optional</em>) – fecha de la última observación a descargar. Ver nota 6 abajo para más detalles.</p></li>
+<li><p><strong>func</strong> – </p></li>
+<li><p><strong>freq</strong> (<em>str</em><em>, </em><em>optional</em>) – frecuencia a la que se quiere convertir los datos. Si este parámetro no se indica y se requieren series de
+distintas frecuencias, el resultado será un Data.Frame con la menor periodicidad de las series solicitadas.</p></li>
+<li><p><strong>info</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default=False</em><em>)</em>) – Si <cite>True</cite>, se imprime metadata del cuadro descargado, así como un hipervículo para consultar los datos en el
+sitio de Internet del BCCR</p></li>
+<li><p><strong>indicadores</strong> (<em>pares de nombre=codigo</em><em>, </em><em>de los cuadros requeridos</em>) – Este es el método preferible para indicar las series requeridas (en vez del parámetro <cite>Códigos</cite>). Las series
+se enumeran como pares de nombre=codigo, donde nombre es el nombre que tendrá el indicador en el DataFrame
+resultante, y codigo es un número entero que identifica el cuadro en la página de indicadores económicos del BCCR.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Devuelve</dt>
+<dd class="field-even"><p>una tabla con los datos solicitados, filas indexadas por tiempo, cada columna es un indicador.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto</dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Notas</p>
+<p>1. Esta función construye un URL a partir de los parámetros proporcionados, para cada uno de los Indicadores solicitados.
+Descarga los datos, los transforma en una tabla de datos de Pandas.</p>
+<ol class="arabic simple" start="2">
+<li><p>Si hay indicadores de distintas frecuecias, los transforma a la misma frecuencia según el método indicado.</p></li>
+</ol>
+<p>3. A excepción de <cite>*Cuadros</cite>, todos los parámetros deben usar palabra clave, aunque es preferible usar el parámetro
+<cite>indicadores</cite> en vez de <cite>*Cuadros</cite>. (Ver los ejemplos)</p>
+<p>4. Hay varias maneras de indicar los Indicadores: (a) simplemente enumerándolos, (b) en una lista o tupla, y
+(c) en un diccionario (método obsoleto, es mejor usar el parámetro <cite>indicadores</cite>). En caso de tratarse de
+diccionario, los códigos se indican como las llaves del diccionario, mientras que los valores del diccionario
+se usan para renombrar las columnas resultantes.</p>
+<p>5. Las instancias de la clase PaginaWeb son ejecutables: si se llaman como una función, simplemente ejecutan la
+función datos()</p>
+<ol class="arabic simple" start="6">
+<li><p>El formato de fechas es muy flexible. Por ejemplo, todas estas expresiones son válidas:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Para indicar el año 2015: se puede emplear tanto un <cite>int</cite> como un <cite>str</cite></p></li>
+</ul>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span>  <span class="n">FechaInicio</span> <span class="o">=</span> <span class="mi">2015</span> <span class="c1"># se interpreta como  1 de enero de 2015</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="n">FechaFinal</span> <span class="o">=</span> <span class="s2">&quot;2015&quot;</span>  <span class="c1"># se interpreta como 31 de diciembre de 2015</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Para indicar el mes marzo de 2017: cualquiera de estas expresiones es válida</p></li>
+</ul>
+<blockquote>
+<div><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;2017-03&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;2017/03&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;2017m3&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;03/2017&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;03-2017&quot;</span>
+</pre></div>
+</div>
+<p>En <cite>FechaInicio=</cite> resulta en 1 de marzo de 2017, en <cite>FechaFinal=</cite> resulta en 31 de marzo de 2017.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Para indicar el 12 de agosto de 2018:</p></li>
+</ul>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;2017/8/12&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;2017-08-12&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;12/8/2017&quot;</span>
+</pre></div>
+</div>
+<p>Observe que para separar los componentes de una fecha se puede usar cualquier caracter no numérico (usualmente <cite>/</cite> o <cite>-</cite>).</p>
+<p class="rubric">Ejemplos</p>
+<p>La forma preferible de solicitar los indicadores es como pares de <cite>nombre=cuadro</cite>, de manera que <cite>nombre</cite> se utilice
+como encabezado de columna en la tabla de datos resultante:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">bccr</span> <span class="kn">import</span> <span class="n">PW</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SW</span><span class="p">(</span><span class="n">M1</span><span class="o">=</span><span class="mi">125</span><span class="p">,</span> <span class="n">Npp</span><span class="o">=</span><span class="mi">177</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="bccr.pagina.PaginaWeb.soporte">
+<code class="sig-name descname">soporte</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cuadro</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.soporte" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Indica si un <cite>cuadro</cite> específico puede descargarse con PaginaWeb</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><p><strong>cuadro</strong> (<em>int o str</em>) – Número de cuadro que se desea verificar</p>
+</dd>
+<dt class="field-even">Devuelve</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="bccr.pagina.PaginaWeb.web">
+<code class="sig-name descname">web</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Cuadro</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.web" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Abre el cuadro especificado en el sitio del BCCR, usando el navegador de Internet predeterminado.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><p><strong>Cuadro</strong> (<em>int</em><em> or </em><em>str</em>) – Número de cuadro que se desea verificar</p>
+</dd>
+<dt class="field-even">Devuelve</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Ejemplos</p>
+<p>Para abrir el cuadro 125</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">web</span><span class="p">(</span><span class="mi">125</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/r2-logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=randall-romero&repo=econometria&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navegación</h3>
+<p class="caption"><span class="caption-text">Contenidos:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gee.html">Servicio Web</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pagina Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="gee.html" title="capítulo anterior">Servicio Web</a></li>
+      <li>Next: <a href="gui.html" title="próximo capítulo">GUI</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Randall Romero-Aguilar.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/pagina.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

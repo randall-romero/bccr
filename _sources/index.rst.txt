@@ -1,0 +1,51 @@
+Documentación del paquete bccr
+================================
+
+Contenido
+---------
+.. toctree::
+   :maxdepth: 2
+
+   gee
+   pagina
+   gui
+
+
+Indices y tablas
+----------------
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+
+
+Introducción
+------------
+
+El paquete `bccr` permite descargar datos del `Banco Central de Costa Rica <https://www.bccr.fi.cr/>`_, y combinarlos en una única tabla de datos de `pandas`.
+
+El paquete ofrece dos clases para trabajar en Python, `ServicioWeb` y `PaginaWeb`, así como una interfase gráfica `GUI`.
+
+* `ServicioWeb`: descarga indicadores individuales del `servicio web <https://www.bccr.fi.cr/indicadores-economicos/servicio-web>`_ del Banco Central.
+* `PaginaWeb`: descarga cuadros individuales (algunos con un solo indicador, otros con varios), de la página de `indicadores económicos <https://www.bccr.fi.cr/indicadores-economicos>`_.
+* `GUI`: interfase gráfica, basada en la clase `ServicioWeb`.
+
+|
+|
+
+ADVERTENCIA:
+^^^^^^^^^^^^
+Este paquete **NO** es un producto oficial de BCCR. El autor lo provee para facilitar el manejo de datos, pero no ofrece ninguna garantía acerca de su correcto funcionamiento.
+
+|
+|
+
+Autor:
+^^^^^
+**Randall Romero Aguilar**.
+
+Si desea reportarme un fallo en esta herramienta, o bien sugerirme alguna mejora, por favor escríbame al correo `randall.romero@outlook.com <mailto:randall.romero@outlook.com>`_ .
+
+
+

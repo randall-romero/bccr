@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentación del paquete bccr &#8212; documentación de bccr - 2021.05</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Servicio Web" href="gee.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="documentacion-del-paquete-bccr">
+<h1>Documentación del paquete bccr<a class="headerlink" href="#documentacion-del-paquete-bccr" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="contenido">
+<h2>Contenido<a class="headerlink" href="#contenido" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gee.html">Servicio Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pagina.html">Pagina Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gui.html#indicadores-panel-lateral">Indicadores  (panel lateral)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui.html#datos-vineta">Datos (viñeta)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui.html#grafico-vineta">Gráfico (viñeta)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui.html#buscar-codigos-vineta">Buscar códigos (viñeta)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui.html#quien-vineta">¿Quién? (viñeta)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui.html#ayuda-vineta">Ayuda (viñeta)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-y-tablas">
+<h2>Indices y tablas<a class="headerlink" href="#indices-y-tablas" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Índice</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Índice de Módulos</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Página de Búsqueda</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El paquete <cite>bccr</cite> permite descargar datos del <a class="reference external" href="https://www.bccr.fi.cr/">Banco Central de Costa Rica</a>, y combinarlos en una única tabla de datos de <cite>pandas</cite>.</p>
+<p>El paquete ofrece dos clases para trabajar en Python, <cite>ServicioWeb</cite> y <cite>PaginaWeb</cite>, así como una interfase gráfica <cite>GUI</cite>.</p>
+<ul class="simple">
+<li><p><cite>ServicioWeb</cite>: descarga indicadores individuales del <a class="reference external" href="https://www.bccr.fi.cr/indicadores-economicos/servicio-web">servicio web</a> del Banco Central.</p></li>
+<li><p><cite>PaginaWeb</cite>: descarga cuadros individuales (algunos con un solo indicador, otros con varios), de la página de <a class="reference external" href="https://www.bccr.fi.cr/indicadores-economicos">indicadores económicos</a>.</p></li>
+<li><p><cite>GUI</cite>: interfase gráfica, basada en la clase <cite>ServicioWeb</cite>.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="section" id="advertencia">
+<h3>ADVERTENCIA:<a class="headerlink" href="#advertencia" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Este paquete <strong>NO</strong> es un producto oficial de BCCR. El autor lo provee para facilitar el manejo de datos, pero no ofrece ninguna garantía acerca de su correcto funcionamiento.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="autor">
+<h3>Autor:<a class="headerlink" href="#autor" title="Enlazar permanentemente con este título">¶</a></h3>
+<p><strong>Randall Romero Aguilar</strong>.</p>
+<p>Si desea reportarme un fallo en esta herramienta, o bien sugerirme alguna mejora, por favor escríbame al correo <a class="reference external" href="mailto:randall&#46;romero&#37;&#52;&#48;outlook&#46;com">randall<span>&#46;</span>romero<span>&#64;</span>outlook<span>&#46;</span>com</a> .</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="#">
+    <img class="logo" src="_static/r2-logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=randall-romero&repo=econometria&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navegación</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gee.html">Servicio Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pagina.html">Pagina Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="gee.html" title="próximo capítulo">Servicio Web</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Randall Romero-Aguilar.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

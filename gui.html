@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GUI &#8212; documentación de bccr - 2021.05</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Pagina Web" href="pagina.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="gui">
+<h1>GUI<a class="headerlink" href="#gui" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>El propósito de esta interfase gráfica (GUI) es facilitar la búsqueda y descarga de indicadores publicados por el <a class="reference external" href="https://www.bccr.fi.cr/">Banco Central de Costa Rica</a> por medio de su <a class="reference external" href="https://www.bccr.fi.cr/indicadores-economicos/servicio-web">servicio web.</a>.</p>
+<p>La interfase está basada en la clase <cite>ServicioWeb</cite> del paquete <cite>bccr</cite>. Los datos se descargan y se presentan en una tabla en formato <em>tidy</em>, en la cual cada fila corresponde a un período (día, mes, trimestre, año) y cada columna a un indicador.</p>
+<div class="section" id="indicadores-panel-lateral">
+<h2>Indicadores  (panel lateral)<a class="headerlink" href="#indicadores-panel-lateral" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Este panel contiene las opciones para delimitar la búsqueda de datos.</p>
+<img alt="_images/GUI-Indicadores.png" src="_images/GUI-Indicadores.png" />
+<ol class="arabic simple">
+<li><p><strong>Indicadores</strong> En esta tabla se indican los indicadores que se desea descargar. En la columna  <em>Código</em> se utiliza el código numérico del Servicio Web, y en la columna <em>Nombre</em> el nombre que tendrá la serie en la tabla de datos.</p></li>
+<li><p><strong>AGREGAR OTRO CÓDIGO</strong> Este botón inserta una fila adicional en la tabla de Indicadores. Para eliminar filas, hacer clic en la <strong>x</strong> de la fila respectiva.</p></li>
+<li><p><strong>Rango de fechas a consultar</strong> Opcional, escriba fechas en formato YYYY/MM/DD, o utilice el calendario que aparece al seleccionar el campo respectivo.</p></li>
+<li><p><strong>Frecuencia de los datos</strong> Opcional. De manera predeterminada se muestran datos en la frecuencia original (si se solicitan indicadores de distinta frecuencia, se reportan con la menor de las frecuencias). Se puede especificar una frecuencia menor (por ejemplo, trimestral para datos diarios o mensuales, pero no para datos anuales).</p></li>
+<li><p><strong>Función para agregación</strong> Opcional. Si se cambia la frecuencia de los datos, esta función determina cómo se agregan los datos de un período (promedio, suma, último o primero). Puede especificar si esta agregación debe propagar o ignorar los valores faltantes.</p></li>
+<li><p><strong>Rellenar datos faltantes</strong> Opcional. En algunas series es común que hayan brechas en la serie de datos (por ejemplo, en series diarias si no se reporta dato los fines de semana). Esta opción permite imputar valores a estos datos faltantes (ya sea usando el último dato disponible o el siguiente). Esta operación se hace antes de la agregación de datos (si se cambia la frecuencia de las series).</p></li>
+<li><p><strong>CONSULTAR DATOS</strong> Clic en este botón para consultar los datos al BCCR y mostrarlos en la tabla de la pestaña <strong>Datos</strong> y graficarlos en la pestaña <strong>Gráfico</strong>.</p></li>
+</ol>
+</div>
+<div class="section" id="datos-vineta">
+<h2>Datos (viñeta)<a class="headerlink" href="#datos-vineta" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Presenta una tabla con los datos descargados. Puede descargar estos datos oprimiendo los botones que aparecen en la parte superior.
+Además, en la parte superior de la viñeta aparece el código de Python que descarga los datos mostrados en la tabla.</p>
+<img alt="_images/GUI-datos.png" src="_images/GUI-datos.png" />
+<ol class="arabic simple">
+<li><p>La tabla muestra los datos solicitados (con cuatro decimales), usando los nombres indicados en el panel lateral.</p></li>
+<li><p>Se muestra el código de Python que obtiene estos datos, usando el ServicioWeb.</p></li>
+<li><p>Puede escribir un nombre de archivo (sin extensión) y descargar los datos en formato Excel, Stata, o CSV presionando el botón correspondiente.</p></li>
+</ol>
+</div>
+<div class="section" id="grafico-vineta">
+<h2>Gráfico (viñeta)<a class="headerlink" href="#grafico-vineta" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Presenta un gráfico de todas las series descargadas. Puede ocultar y volver a mostrar series individuales haciendo clic a su
+nombre en la leyenda del gráfico.</p>
+<img alt="_images/GUI-Gráfico.png" src="_images/GUI-Gráfico.png" />
+<ol class="arabic simple">
+<li><p>Haciendo clic en los elementos de la leyenda se muestran y ocultan las series del gráfico.</p></li>
+<li><p>Al acercar el cursor a la parte superior aparece una barra de herramientas que permite, entre otras cosas, descargar el gráfico como una imagen PNG.</p></li>
+</ol>
+<p>También puede cambiar el rango de fechas del gráfico, sin necesidad de modificar la búsqueda, simplemente seleccionando la región deseada del gráfico con el <em>mouse</em>.</p>
+</div>
+<div class="section" id="buscar-codigos-vineta">
+<h2>Buscar códigos (viñeta)<a class="headerlink" href="#buscar-codigos-vineta" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Facilita la obtención de los códigos del catálogo de indicadores del Servicio Web. La tabla resultante de buscar un término
+(palabra o frases) puede filtrarse escribiendo en la fila superior (por ejemplo, para que solo muestre indicadores como
+porcentaje de variación, o solo indicadores mensuales).</p>
+<img alt="_images/GUI-Buscar.png" src="_images/GUI-Buscar.png" />
+<ol class="arabic simple">
+<li><p>Ingrese los términos que desea buscar.</p></li>
+<li><p>Escoja el tipo de búsqueda que desea realizar, y haga clic en el botón <strong>BUSCAR</strong>.</p></li>
+<li><p>Justo debajo de cada encabezado de columna, hay una celda en blanco. Puede escribir un texto allí para filtar los resultados de su búsqueda.</p></li>
+<li><p>Puede ordenar los resultados haciendo clic en las flechas al lado del encabezado de cada columna.</p></li>
+</ol>
+</div>
+<div class="section" id="quien-vineta">
+<h2>¿Quién? (viñeta)<a class="headerlink" href="#quien-vineta" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Permite identificar las relaciones de las cuentas, mostrando las cuentas superiores así como las subcuentas, para un código
+especificado. Esto sirve, por ejemplo, si de desea descargar los componentes del IPC.</p>
+<img alt="_images/GUI-Quien.png" src="_images/GUI-Quien.png" />
+<ol class="arabic simple">
+<li><p>Escriba el código de la cuenta de la cual requiere información, y haga click en <strong>BUSCAR</strong>.</p></li>
+<li><p>En este espacio se describe la cuenta, y se muestra su ubicación en la jerarquía de datos de la base.</p></li>
+<li><p>En este espacio se muestran todas las subcuentas (si tiene) de la cuenta buscada, así como los códigos de esos indicadores (útil cuando se necesita descargar datos de cuentas relacionadas).</p></li>
+<li><p>Puede hacer clic en la esquina del cuadro y arrastrar para cambiar su tamaño, por ejemplo, para mostrar más subcuentas.</p></li>
+</ol>
+</div>
+<div class="section" id="ayuda-vineta">
+<h2>Ayuda (viñeta)<a class="headerlink" href="#ayuda-vineta" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Muestra información de referencia para usar la GUI, similar a la que muestra esta documentación.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/r2-logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=randall-romero&repo=econometria&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navegación</h3>
+<p class="caption"><span class="caption-text">Contenidos:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gee.html">Servicio Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pagina.html">Pagina Web</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GUI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#indicadores-panel-lateral">Indicadores  (panel lateral)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#datos-vineta">Datos (viñeta)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#grafico-vineta">Gráfico (viñeta)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#buscar-codigos-vineta">Buscar códigos (viñeta)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quien-vineta">¿Quién? (viñeta)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ayuda-vineta">Ayuda (viñeta)</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="pagina.html" title="capítulo anterior">Pagina Web</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Randall Romero-Aguilar.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gui.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
