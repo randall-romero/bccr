@@ -11,7 +11,7 @@ La forma típica de utilizar esta clase es
 
 donde `codigo1` y `codigo2` son los códigos de los indicadorees (posiblemente encontrados con `SW.buscar`), y `indic1` e `indic2` los nombres que se le quiere asignar a estos indicadores.
 
-En la documentación que sigue a continuación aparecen más ejemplos.
+En la documentación que sigue a continuación aparecen más ejemplos. `En esta página se muestra un cuaderno de Jupyter que ilustra el uso de esta clase <http://randall-romero.com/demo-bccr-servicioweb/>`_.
 
 |
 |
