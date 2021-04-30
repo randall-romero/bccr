@@ -8,6 +8,7 @@
     <title>Servicio Web &#8212; documentación de bccr - 2021.05</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/mis-formatos.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -84,6 +85,30 @@ del ServicioWeb del Banco Central de Costa Rica (<a class="reference external" h
 </pre></div>
 </div>
 </div></blockquote>
+<dl class="py data">
+<dt id="bccr.gee.FUNCS">
+<code class="sig-prename descclassname">bccr.gee.</code><code class="sig-name descname">FUNCS</code><em class="property"> = {'first': &lt;function &lt;lambda&gt;&gt;, 'last': &lt;function &lt;lambda&gt;&gt;, 'mean': &lt;function &lt;lambda&gt;&gt;, 'nanfirst': &lt;function &lt;lambda&gt;&gt;, 'nanlast': &lt;function &lt;lambda&gt;&gt;, 'nanmean': &lt;function nanmean&gt;, 'nansum': &lt;function nansum&gt;, 'sum': &lt;function &lt;lambda&gt;&gt;}</em><a class="headerlink" href="#bccr.gee.FUNCS" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Diccionario que mapea nombres de funciones a objetos de función. Se utilizan para cambiar de
+frecuencia los datos</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict of functions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt id="bccr.gee.SW">
+<code class="sig-prename descclassname">bccr.gee.</code><code class="sig-name descname">SW</code><em class="property"> = Clase ServicioWeb: permite buscar y descargar datos de indicadores del servicio web del Banco Central de Costa Rica.</em><a class="headerlink" href="#bccr.gee.SW" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Este es un objeto de clase <cite>ServicioWeb</cite> con parámetros de inicialización predeterminados. Puede
+importarse en una sesión simplemente con <cite>from bccr import SW</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bccr.ServicioWeb</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py class">
 <dt id="bccr.gee.ServicioWeb">
 <em class="property">class </em><code class="sig-prename descclassname">bccr.gee.</code><code class="sig-name descname">ServicioWeb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nombre</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">correo</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">token</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">indicadores</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.gee.ServicioWeb" title="Enlazar permanentemente con esta definición">¶</a></dt>

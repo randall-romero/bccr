@@ -8,6 +8,7 @@
     <title>Pagina Web &#8212; documentación de bccr - 2021.05</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/mis-formatos.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -49,7 +50,42 @@
 <div class="line"><br /></div>
 <div class="line"><br /></div>
 </div>
-<span class="target" id="module-bccr.pagina"></span><dl class="py class">
+<span class="target" id="module-bccr.pagina"></span><p>pagina: Un módulo para definir la clase PaginaWeb</p>
+<p>Este módulo define la clase PaginaWeb y crea una instancia de la misma, PW. Esta clase permite buscar y descargar cuadros
+de indicadores del sitio web del Banco Central de Costa Rica. (<a class="reference external" href="https://www.bccr.fi.cr/indicadores-economicos/">https://www.bccr.fi.cr/indicadores-economicos/</a>) .</p>
+<p>La forma usual de utilizar esta clase es</p>
+<blockquote>
+<div><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">bccr</span> <span class="kn">import</span> <span class="n">PW</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>para buscar el código de algún indicador de interés, utilice</p></li>
+</ul>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PW</span><span class="o">.</span><span class="n">buscar</span><span class="p">(</span><span class="s2">&quot;nombre de un indicador&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>para descargar datos de indicadors 3, 4 y 22 (por ejemplo), hay varias formas de hacerlo</p></li>
+</ul>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PW</span><span class="p">(</span><span class="n">indicA</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">indicB</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">indicC</span><span class="o">=</span><span class="mi">231</span><span class="p">)</span> <span class="c1"># pasando los códigos como valores de parámetros, en</span>
+<span class="go">        cuyo caso los indicadores son renombrados como &#39;indicA&#39;, &#39;indicB&#39; y &#39;indicC&#39;, respectivamente.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PW</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>   <span class="c1"># pasando los códigos directamente</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="py data">
+<dt id="bccr.pagina.PW">
+<code class="sig-prename descclassname">bccr.pagina.</code><code class="sig-name descname">PW</code><em class="property"> = Clase PaginaWeb: permite buscar y descargar datos del sitio de indicadores económicos del Banco Central de Costa Rica.</em><a class="headerlink" href="#bccr.pagina.PW" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Este es un objeto de clase <cite>PaginaWeb</cite> con parámetros de inicialización predeterminados. Puede
+importarse en una sesión simplemente con <cite>from bccr import PW</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bccr.PaginaWeb</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
 <dt id="bccr.pagina.PaginaWeb">
 <em class="property">class </em><code class="sig-prename descclassname">bccr.pagina.</code><code class="sig-name descname">PaginaWeb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cuadros</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><dl class="py method">

@@ -1,0 +1,25 @@
+
+
+.function {
+    border-bottom: 3px solid #2596be;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.method {
+    border-bottom: 3px solid #2596be;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.data {
+    border-bottom: 3px solid #2596be;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.attribute {
+    border-bottom: 3px solid #2596be;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
