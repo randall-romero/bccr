@@ -6,14 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Servicio Web &#8212; documentación de bccr - 2021.05</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/mis-formatos.css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
@@ -45,7 +43,7 @@
 </pre></div>
 </div>
 <p>donde <cite>codigo1</cite> y <cite>codigo2</cite> son los códigos de los indicadorees (posiblemente encontrados con <cite>SW.buscar</cite>), y <cite>indic1</cite> e <cite>indic2</cite> los nombres que se le quiere asignar a estos indicadores.</p>
-<p>En la documentación que sigue a continuación aparecen más ejemplos. <a class="reference external" href="http://randall-romero.com/demo-bccr-servicioweb/">En esta página se muestra un cuaderno de Jupyter que ilustra el uso de esta clase</a>.</p>
+<p>En la documentación que sigue a continuación aparecen más ejemplos.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -87,7 +85,7 @@ del ServicioWeb del Banco Central de Costa Rica (<a class="reference external" h
 </div></blockquote>
 <dl class="py data">
 <dt id="bccr.gee.FUNCS">
-<code class="sig-prename descclassname">bccr.gee.</code><code class="sig-name descname">FUNCS</code><em class="property"> = {'first': &lt;function &lt;lambda&gt;&gt;, 'last': &lt;function &lt;lambda&gt;&gt;, 'mean': &lt;function &lt;lambda&gt;&gt;, 'nanfirst': &lt;function &lt;lambda&gt;&gt;, 'nanlast': &lt;function &lt;lambda&gt;&gt;, 'nanmean': &lt;function nanmean&gt;, 'nansum': &lt;function nansum&gt;, 'sum': &lt;function &lt;lambda&gt;&gt;}</em><a class="headerlink" href="#bccr.gee.FUNCS" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">bccr.gee.</span></code><code class="sig-name descname"><span class="pre">FUNCS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'first':</span> <span class="pre">&lt;function</span> <span class="pre">&lt;lambda&gt;&gt;,</span> <span class="pre">'last':</span> <span class="pre">&lt;function</span> <span class="pre">&lt;lambda&gt;&gt;,</span> <span class="pre">'mean':</span> <span class="pre">&lt;function</span> <span class="pre">&lt;lambda&gt;&gt;,</span> <span class="pre">'nanfirst':</span> <span class="pre">&lt;function</span> <span class="pre">&lt;lambda&gt;&gt;,</span> <span class="pre">'nanlast':</span> <span class="pre">&lt;function</span> <span class="pre">&lt;lambda&gt;&gt;,</span> <span class="pre">'nanmean':</span> <span class="pre">&lt;function</span> <span class="pre">nanmean&gt;,</span> <span class="pre">'nansum':</span> <span class="pre">&lt;function</span> <span class="pre">nansum&gt;,</span> <span class="pre">'sum':</span> <span class="pre">&lt;function</span> <span class="pre">&lt;lambda&gt;&gt;}</span></em><a class="headerlink" href="#bccr.gee.FUNCS" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Diccionario que mapea nombres de funciones a objetos de función. Se utilizan para cambiar de
 frecuencia los datos</p>
 <dl class="field-list simple">
@@ -99,7 +97,7 @@ frecuencia los datos</p>
 
 <dl class="py data">
 <dt id="bccr.gee.SW">
-<code class="sig-prename descclassname">bccr.gee.</code><code class="sig-name descname">SW</code><em class="property"> = Clase ServicioWeb: permite buscar y descargar datos de indicadores del servicio web del Banco Central de Costa Rica.</em><a class="headerlink" href="#bccr.gee.SW" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">bccr.gee.</span></code><code class="sig-name descname"><span class="pre">SW</span></code><em class="property"> <span class="pre">=</span> <span class="pre">Clase</span> <span class="pre">ServicioWeb:</span> <span class="pre">permite</span> <span class="pre">buscar</span> <span class="pre">y</span> <span class="pre">descargar</span> <span class="pre">datos</span> <span class="pre">de</span> <span class="pre">indicadores</span> <span class="pre">del</span> <span class="pre">servicio</span> <span class="pre">web</span> <span class="pre">del</span> <span class="pre">Banco</span> <span class="pre">Central</span> <span class="pre">de</span> <span class="pre">Costa</span> <span class="pre">Rica.</span></em><a class="headerlink" href="#bccr.gee.SW" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Este es un objeto de clase <cite>ServicioWeb</cite> con parámetros de inicialización predeterminados. Puede
 importarse en una sesión simplemente con <cite>from bccr import SW</cite>.</p>
 <dl class="field-list simple">
@@ -111,11 +109,11 @@ importarse en una sesión simplemente con <cite>from bccr import SW</cite>.</p>
 
 <dl class="py class">
 <dt id="bccr.gee.ServicioWeb">
-<em class="property">class </em><code class="sig-prename descclassname">bccr.gee.</code><code class="sig-name descname">ServicioWeb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nombre</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">correo</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">token</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">indicadores</span><span class="p">:</span> <span class="n">pandas.core.frame.DataFrame</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.gee.ServicioWeb" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">bccr.gee.</span></code><code class="sig-name descname"><span class="pre">ServicioWeb</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nombre</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">correo</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indicadores</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.gee.ServicioWeb" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Una clase para descargar datos del servicio web del Banco Central de Costa Rica</p>
 <dl class="py attribute">
 <dt id="bccr.gee.ServicioWeb.nombre">
-<code class="sig-name descname">nombre</code><a class="headerlink" href="#bccr.gee.ServicioWeb.nombre" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<code class="sig-name descname"><span class="pre">nombre</span></code><a class="headerlink" href="#bccr.gee.ServicioWeb.nombre" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>El nombre del usuario registrado en el servicio web del BCCR</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -126,7 +124,7 @@ importarse en una sesión simplemente con <cite>from bccr import SW</cite>.</p>
 
 <dl class="py attribute">
 <dt id="bccr.gee.ServicioWeb.correo">
-<code class="sig-name descname">correo</code><a class="headerlink" href="#bccr.gee.ServicioWeb.correo" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<code class="sig-name descname"><span class="pre">correo</span></code><a class="headerlink" href="#bccr.gee.ServicioWeb.correo" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>El correo electrónico registrado por el usuario en el servicio web.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -137,7 +135,7 @@ importarse en una sesión simplemente con <cite>from bccr import SW</cite>.</p>
 
 <dl class="py attribute">
 <dt id="bccr.gee.ServicioWeb.token">
-<code class="sig-name descname">token</code><a class="headerlink" href="#bccr.gee.ServicioWeb.token" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<code class="sig-name descname"><span class="pre">token</span></code><a class="headerlink" href="#bccr.gee.ServicioWeb.token" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>El token recibido por el usuario de parte del BCCR para tener acceso al servicio web.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -148,7 +146,7 @@ importarse en una sesión simplemente con <cite>from bccr import SW</cite>.</p>
 
 <dl class="py attribute">
 <dt id="bccr.gee.ServicioWeb.indicadores">
-<code class="sig-name descname">indicadores</code><a class="headerlink" href="#bccr.gee.ServicioWeb.indicadores" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<code class="sig-name descname"><span class="pre">indicadores</span></code><a class="headerlink" href="#bccr.gee.ServicioWeb.indicadores" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>una table con la descripción de los indicadores disponibles en el servicio web.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -170,7 +168,7 @@ predeterminada de <cite>ServicioWeb</cite>, llamada <cite>SW</cite>, que utiliza
 </div>
 <dl class="py method">
 <dt id="bccr.gee.ServicioWeb.buscar">
-<code class="sig-name descname">buscar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">todos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">frase</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">algunos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">frecuencia</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">Unidad</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">Medida</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">periodo</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.gee.ServicioWeb.buscar" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<code class="sig-name descname"><span class="pre">buscar</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">todos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algunos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frecuencia</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Unidad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Medida</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">periodo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.gee.ServicioWeb.buscar" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>buscar códigos de indicadores según su descripción</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parámetros</dt>
@@ -232,7 +230,7 @@ cumplir la misma funcionalidad.</p>
 
 <dl class="py method">
 <dt id="bccr.gee.ServicioWeb.datos">
-<code class="sig-name descname">datos</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">codigos</span></em>, <em class="sig-param"><span class="n">FechaInicio</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">FechaFinal</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">func</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">freq</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fillna</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">indicadores</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.gee.ServicioWeb.datos" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<code class="sig-name descname"><span class="pre">datos</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">codigos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FechaInicio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FechaFinal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">indicadores</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.gee.ServicioWeb.datos" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parámetros</dt>
 <dd class="field-odd"><ul class="simple">
@@ -367,7 +365,7 @@ del viernes anterior)</p>
 
 <dl class="py method">
 <dt id="bccr.gee.ServicioWeb.quien">
-<code class="sig-name descname">quien</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">codigo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.gee.ServicioWeb.quien" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<code class="sig-name descname"><span class="pre">quien</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">codigo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.gee.ServicioWeb.quien" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Imprime información acerca de un indicador</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parámetros</dt>
@@ -389,7 +387,7 @@ del viernes anterior)</p>
 
 <dl class="py method">
 <dt id="bccr.gee.ServicioWeb.subcuentas">
-<code class="sig-name descname">subcuentas</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">codigo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.gee.ServicioWeb.subcuentas" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<code class="sig-name descname"><span class="pre">subcuentas</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">codigo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.gee.ServicioWeb.subcuentas" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Subcuentas de un indicador</p>
 <p>Algunos indicadores pueden desagregarse (por ejemplo, el IMAE total se puede desagregar por actividad económica).
 Esta función ayuda a encontrar los códigos de esas subcuentas.</p>
@@ -482,11 +480,12 @@ Además, el resultado se imprime a pantalla como un árbol de cuentas.</p>
       </div>
       <div class="clearer"></div>
     </div>
+
     <div class="footer">
       &copy;2021, Randall Romero-Aguilar.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
@@ -497,5 +496,15 @@ Además, el resultado se imprime a pantalla como un árbol de cuentas.</p>
     
 
     
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("G-Y3H5SWSQ3N");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
   </body>
 </html>
