@@ -42,7 +42,7 @@ Este paquete **NO** es un producto oficial de BCCR. El autor lo provee para faci
 |
 
 Autor:
-^^^^^
+^^^^^^
 **Randall Romero Aguilar**.
 
 Si desea reportarme un fallo en esta herramienta, o bien sugerirme alguna mejora, por favor escríbame al correo `randall.romero@outlook.com <mailto:randall.romero@outlook.com>`_ .
