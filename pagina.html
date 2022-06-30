@@ -4,11 +4,12 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Pagina Web &#8212; documentación de bccr - 2021.05</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -33,7 +34,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="pagina-web">
+  <section id="pagina-web">
 <h1>Pagina Web<a class="headerlink" href="#pagina-web" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>La clase <cite>PaginaWeb</cite> se define en el módulo <cite>pagina</cite> que documenta en esta página.</p>
 <p>La forma típica de utilizar esta clase es</p>
@@ -72,8 +73,8 @@ de indicadores del sitio web del Banco Central de Costa Rica. (<a class="referen
 </div>
 </div></blockquote>
 <dl class="py data">
-<dt id="bccr.pagina.PW">
-<code class="sig-prename descclassname"><span class="pre">bccr.pagina.</span></code><code class="sig-name descname"><span class="pre">PW</span></code><em class="property"> <span class="pre">=</span> <span class="pre">Clase</span> <span class="pre">PaginaWeb:</span> <span class="pre">permite</span> <span class="pre">buscar</span> <span class="pre">y</span> <span class="pre">descargar</span> <span class="pre">datos</span> <span class="pre">del</span> <span class="pre">sitio</span> <span class="pre">de</span> <span class="pre">indicadores</span> <span class="pre">económicos</span> <span class="pre">del</span> <span class="pre">Banco</span> <span class="pre">Central</span> <span class="pre">de</span> <span class="pre">Costa</span> <span class="pre">Rica.</span></em><a class="headerlink" href="#bccr.pagina.PW" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dt class="sig sig-object py" id="bccr.pagina.PW">
+<span class="sig-prename descclassname"><span class="pre">bccr.pagina.</span></span><span class="sig-name descname"><span class="pre">PW</span></span><em class="property"> <span class="pre">=</span> <span class="pre">Clase</span> <span class="pre">PaginaWeb:</span> <span class="pre">permite</span> <span class="pre">buscar</span> <span class="pre">y</span> <span class="pre">descargar</span> <span class="pre">datos</span> <span class="pre">del</span> <span class="pre">sitio</span> <span class="pre">de</span> <span class="pre">indicadores</span> <span class="pre">económicos</span> <span class="pre">del</span> <span class="pre">Banco</span> <span class="pre">Central</span> <span class="pre">de</span> <span class="pre">Costa</span> <span class="pre">Rica.</span></em><a class="headerlink" href="#bccr.pagina.PW" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Este es un objeto de clase <cite>PaginaWeb</cite> con parámetros de inicialización predeterminados. Puede
 importarse en una sesión simplemente con <cite>from bccr import PW</cite>.</p>
 <dl class="field-list simple">
@@ -84,11 +85,11 @@ importarse en una sesión simplemente con <cite>from bccr import PW</cite>.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="bccr.pagina.PaginaWeb">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">bccr.pagina.</span></code><code class="sig-name descname"><span class="pre">PaginaWeb</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cuadros</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dt class="sig sig-object py" id="bccr.pagina.PaginaWeb">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bccr.pagina.</span></span><span class="sig-name descname"><span class="pre">PaginaWeb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cuadros</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><dl class="py method">
-<dt id="bccr.pagina.PaginaWeb.api">
-<code class="sig-name descname"><span class="pre">api</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Cuadro</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FechaInicio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FechaFinal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">abrir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.api" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dt class="sig sig-object py" id="bccr.pagina.PaginaWeb.api">
+<span class="sig-name descname"><span class="pre">api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Cuadro</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FechaInicio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FechaFinal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">abrir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.api" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Construye un URL para obtener datos del sitio de indicadores económicos del BCCR</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parámetros</dt>
@@ -147,8 +148,8 @@ importarse en una sesión simplemente con <cite>from bccr import PW</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="bccr.pagina.PaginaWeb.buscar">
-<code class="sig-name descname"><span class="pre">buscar</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">todos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algunos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frecuencia</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.buscar" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dt class="sig sig-object py" id="bccr.pagina.PaginaWeb.buscar">
+<span class="sig-name descname"><span class="pre">buscar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">todos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algunos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frecuencia</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.buscar" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>buscar códigos de indicadores según su descripción</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parámetros</dt>
@@ -203,8 +204,8 @@ PW.buscar(todos=”precio consumidor”)</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="bccr.pagina.PaginaWeb.datos">
-<code class="sig-name descname"><span class="pre">datos</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">*Cuadros</span></em>, <em class="sig-param"><span class="pre">FechaInicio=None</span></em>, <em class="sig-param"><span class="pre">FechaFinal=None</span></em>, <em class="sig-param"><span class="pre">func=&lt;function</span> <span class="pre">sum&gt;</span></em>, <em class="sig-param"><span class="pre">freq=None</span></em>, <em class="sig-param"><span class="pre">info=False</span></em>, <em class="sig-param"><span class="pre">**indicadores</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.datos" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dt class="sig sig-object py" id="bccr.pagina.PaginaWeb.datos">
+<span class="sig-name descname"><span class="pre">datos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">*Cuadros</span></em>, <em class="sig-param"><span class="pre">FechaInicio=None</span></em>, <em class="sig-param"><span class="pre">FechaFinal=None</span></em>, <em class="sig-param"><span class="pre">func=&lt;function</span> <span class="pre">sum&gt;</span></em>, <em class="sig-param"><span class="pre">freq=None</span></em>, <em class="sig-param"><span class="pre">info=False</span></em>, <em class="sig-param"><span class="pre">**indicadores</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.datos" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Descargar datos del sitio de Indicadores Económicos del BCCR</p>
 <p>Construye una consulta por método GET a partir de los parámetros proporcionados, para cada uno de los
 Indicadores solicitados. Descarga los datos, los transforma en una tabla de datos de Pandas.
@@ -291,8 +292,8 @@ como encabezado de columna en la tabla de datos resultante:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="bccr.pagina.PaginaWeb.soporte">
-<code class="sig-name descname"><span class="pre">soporte</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cuadro</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.soporte" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dt class="sig sig-object py" id="bccr.pagina.PaginaWeb.soporte">
+<span class="sig-name descname"><span class="pre">soporte</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cuadro</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.soporte" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Indica si un <cite>cuadro</cite> específico puede descargarse con PaginaWeb</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parámetros</dt>
@@ -308,8 +309,8 @@ como encabezado de columna en la tabla de datos resultante:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="bccr.pagina.PaginaWeb.web">
-<code class="sig-name descname"><span class="pre">web</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Cuadro</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.web" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dt class="sig sig-object py" id="bccr.pagina.PaginaWeb.web">
+<span class="sig-name descname"><span class="pre">web</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Cuadro</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bccr.pagina.PaginaWeb.web" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Abre el cuadro especificado en el sitio del BCCR, usando el navegador de Internet predeterminado.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parámetros</dt>
@@ -331,7 +332,7 @@ como encabezado de columna en la tabla de datos resultante:</p>
 
 </dd></dl>
 
-</div>
+</section>
 
 
           </div>
@@ -381,7 +382,7 @@ como encabezado de columna en la tabla de datos resultante:</p>
   <h3 id="searchlabel">Búsqueda rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Ir a" />
     </form>
     </div>
@@ -399,12 +400,11 @@ como encabezado de columna en la tabla de datos resultante:</p>
       </div>
       <div class="clearer"></div>
     </div>
-
     <div class="footer">
       &copy;2021, Randall Romero-Aguilar.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
@@ -415,15 +415,5 @@ como encabezado de columna en la tabla de datos resultante:</p>
     
 
     
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-57200532-4");
-pageTracker._trackPageview();
-} catch(err) {}</script>
-
   </body>
 </html>

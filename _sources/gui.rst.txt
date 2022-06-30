@@ -31,7 +31,7 @@ Presenta una tabla con los datos descargados. Puede descargar estos datos oprimi
 Además, en la parte superior de la viñeta aparece el código de Python que descarga los datos mostrados en la tabla.
 
 
-.. image:: ./_static/GUI-Datos.png
+.. image:: ./_static/GUI-datos.png
 
 1. La tabla muestra los datos solicitados (con cuatro decimales), usando los nombres indicados en el panel lateral.
 2. Se muestra el código de Python que obtiene estos datos, usando el ServicioWeb.
